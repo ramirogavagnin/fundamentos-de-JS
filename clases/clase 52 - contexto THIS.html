@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Contexto - THIS</title>
+    </head>
+    <body>
+        <script>
+            const ramiro = {
+                nombre: 'Ramiro',
+                apellido: 'Gavagnin',
+            }
+
+            const yesika = {
+                nombre: 'Yesika',
+                apellido: 'Cortés',
+            }
+
+            function saludar(saludo = 'Hola') {
+                console.log(`${saludo}, mi nombre es ${this.nombre}`)
+            }
+            // la función saludar tiene como contexto a window
+            // que sería el scope global, si ejecutamos esta función
+            // sin usar el bind() el output seria Hola, mi nombre es undefined
+
+            // const saludarARamiro = saludar.bind(ramiro) // Hola, mi nombre es Ramiro
+
+            // const saludarAYesika = saludar.bind(yesika) // Hola, mi nombre es Yesika
+
+            setTimeout(saludar.bind(ramiro, 'Hola che'), 1000)
+            // El método bind() nos devuleve una nueva función atando el parametro
+            // que le pasamos, en este caso el obj ramiro, al this dentro
+            // de la función saludar en este caso
+            // En el bind() el primer parámetro es el contexto, o sea quien va a ser THIS,
+            // y luego los siguientes parametros en el orden que aparezcan
+            // El bind() no ejecuta la función sino que nos devuelve la referencia a la función
+            // bindeada con el cambio de contexto que le pasamos como primer parametro
+
+            // call()
+            saludar.call(ramiro, 'Hola querido')
+            // El método call() es como bind() solo que ejecuta la función
+            saludar.apply(ramiro, ['Hola querido'])
+            // El método apply() es como call() solo que el segundo parametro
+            // es un array con los parametros que recibirá nuestra función
+        </script>
+    </body>
+</html>

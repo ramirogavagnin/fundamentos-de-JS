@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Handle Dates</title>
+    </head>
+    <body>
+        <script>
+            function diasEntreFechas(hoy, nacimiento) {
+                const unDia = 1000 * 60 * 60 * 24
+                // cantidad de milisegundos en 1 día
+                const diferencia = Math.abs(hoy - nacimiento)
+                // Math.abs devuelve el valor absoluto de un numero
+                // En este caso nos devolvera al diferencia en milisegundos entre las dos fechas
+                console.log(diferencia)
+                return Math.floor(diferencia / unDia)
+            }
+            const hoy = new Date()
+            const nacimiento = new Date(1990, 0, 5)
+        </script>
+    </body>
+</html>

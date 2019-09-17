@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Punto y coma en JS</title>
+    </head>
+    <body>
+        <script>
+            console.log('Hola mi nombre es Ramiro')
+            ;[1, 2, 3, 4].forEach(n => console.log(n * 2))
+            // en este caso el punto y coma es necesario antes del array
+            // sino tira un error en la consola muy críptico
+            const nombre = 'Ramiro'
+            console.log('Hola mi nombre es Ramiro')
+            ;`${nombre} es un desarrollador`
+            // Aquí también es obligatorio, de lo contrario
+            // me devolvera el error console.log(...) is not a function
+        </script>
+    </body>
+</html>

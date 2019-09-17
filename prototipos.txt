@@ -1,0 +1,4 @@
+#Hablar de objetos en javascript es hablar de prototipos.
+#this hace referencia al nuevo objeto que se acaba de crear.
+#la función que define al prototipo retorna implícitamente this, es decir retorna el nuevo objeto que se creo.
+#La palabra reservada new se utiliza para crear un nuevo objeto con el prototipo indicado.
